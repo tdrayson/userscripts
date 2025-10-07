@@ -9,6 +9,11 @@
 // @grant        none
 // ==/UserScript==
 
+/**
+ * Userscript entrypoint.
+ * Scans the page for contact data and renders the `ContactFinderPanel` UI.
+ * @returns {void}
+ */
 (function () {
   'use strict';
 

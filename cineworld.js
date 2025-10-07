@@ -9,6 +9,11 @@
 // @grant        none
 // ==/UserScript==
 
+/**
+ * Userscript entrypoint.
+ * Mounts `CineworldFilterPanel` and wires observers/route listeners.
+ * @returns {void}
+ */
 (function () {
   'use strict';
 

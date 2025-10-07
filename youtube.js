@@ -9,6 +9,11 @@
 // @grant        none
 // ==/UserScript==
 
+/**
+ * Userscript entrypoint.
+ * Displays true duration/current time adjusted for playback speed on YouTube.
+ * @returns {void}
+ */
 (function () {
   'use strict';
 
@@ -27,6 +32,10 @@
   );
   currentField.style.display = 'none';
 
+  /**
+   * Recompute and display video duration adjusted by current playback rate.
+   * @returns {void}
+   */
   function recomputePlaybackSpeed() {
     var videoDuration = htmlVideoPlayer.duration;
     var videoSpeed = htmlVideoPlayer.playbackRate;
@@ -39,6 +48,10 @@
       readableTime[0] !== '0' ? readableTime : readableTime.slice(1);
   }
 
+  /**
+   * Recompute and display current playback time adjusted by playback rate.
+   * @returns {void}
+   */
   function recomputeCurrentTime() {
     var videoCurtime = htmlVideoPlayer.currentTime;
     var videoSpeed = htmlVideoPlayer.playbackRate;

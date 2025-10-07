@@ -11,6 +11,11 @@
 // @grant        none
 // ==/UserScript==
 
+/**
+ * Userscript entrypoint.
+ * Keeps dev/staging media URLs mapped to live domains and highlights updates.
+ * @returns {void}
+ */
 (function () {
   'use strict';
 
@@ -18,6 +23,11 @@
     return;
   }
 
+  /**
+   * Update <img>, srcset, and CSS background-image URLs to live domains and annotate titles.
+   * Skips when current host is not mapped or when inside wp-admin.
+   * @returns {void}
+   */
   function updateAndHighlightImages() {
     const currentHost = window.location.host;
 
@@ -33,6 +43,12 @@
 
     const liveDomain = domainMappings[currentHost];
 
+    /**
+     * Map a possibly relative or same-host URL to the configured live domain.
+     * Preserves non-matching absolute URLs.
+     * @param {string} url
+     * @returns {string}
+     */
     const toLiveUrl = (url) => {
       if (!url || typeof url !== 'string') return url;
       const trimmed = url.trim();
