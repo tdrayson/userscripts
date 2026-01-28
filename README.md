@@ -57,11 +57,39 @@ Tip: Each script declares `@match` so it only runs on the intended sites.
 
 ---
 
-### YouTube: True Duration and Time (`youtube.js`)
+### YouTube Playback Speed Duration Adjuster (`youtube-speed-adjusted-duration.user.js`)
 
-- **Description**: Shows true duration and current time adjusted for playback speed. Replaces the current-time display and updates as playback progresses.
+- **Description**: Shows adjusted duration and finish time based on playback speed. Displays the effective duration when playing at speeds other than 1x, and calculates when the video will finish.
 - **Matches**:
-  - `https://www.youtube.com/watch*`
+  - `https://www.youtube.com/*`
+  - `https://m.youtube.com/*`
+- **Features**:
+  - Duration display adjusted for playback speed
+  - Finish time calculation showing when video will end
+  - Handles YouTube's SPA navigation
+
+---
+
+### Spark Email to Markdown (`spark.js`)
+
+- **Description**: Extract Spark email threads to markdown format for AI chat pasting. Includes optional writing guidelines prompt.
+- **Matches**:
+  - `https://app.sparkmailapp.com/web-share/*`
+- **Features**:
+  - Extracts full email threads with metadata (from, to, cc, date, subject)
+  - Converts HTML email content to clean markdown
+  - Optional toggle to include writing guidelines prompt
+  - Copy to clipboard with visual feedback
+  - Preview panel with character/word counts
+
+---
+
+### Zoom Browser Redirect (`zoom.js`)
+
+- **Description**: Automatically redirects Zoom meeting links to the browser-based join page, avoiding the desktop app.
+- **Matches**:
+  - `https://*.zoom.us/j/*`
+- **Notes**: Preserves meeting ID and password parameters during redirect.
 
 ---
 

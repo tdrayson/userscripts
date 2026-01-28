@@ -9,11 +9,6 @@
 // @grant        none
 // ==/UserScript==
 
-/**
- * Userscript entrypoint.
- * Mounts `CineworldFilterPanel` and wires observers/route listeners.
- * @returns {void}
- */
 (function () {
   'use strict';
 
@@ -73,167 +68,167 @@
      */
     render() {
       const css = `
-                  @keyframes panelIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-                  :host { all: initial; }
-                  .panel {
-                      position: fixed;
-                      top: 173.5px;
-                      right: 24px;
-                      width: 320px;
-                      background: #ffffff;
-                      color: #0b0f14;
-                      border: 1px solid #e6e8eb;
-                      border-radius: 16px;
-                      box-shadow: 0 16px 48px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.12);
-                      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-                      overflow: hidden;
-                      z-index: 2147483647;
-                      animation: panelIn 160ms ease-out both;
-                  }
-                  .header {
-                      display: flex;
-                      align-items: center;
-                      gap: 12px;
-                      padding: 12px 14px;
-                      border-bottom: 1px solid #eef1f4;
-                      background: #fbfcfd;
-                  }
-                  .titleWrap { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
-                  .badge {
-                      display: inline-flex;
-                      align-items: center;
-                      justify-content: center;
-                      width: 28px;
-                      height: 28px;
-                      border-radius: 8px;
-                      background: #eef3ff;
-                      color: #2d5bff;
-                      font-weight: 600;
-                      font-size: 14px;
-                      flex: 0 0 auto;
-                  }
-                  .title {
-                      font-size: 16px;
-                      font-weight: 700;
-                      margin: 0;
-                      line-height: 1.2;
-                      white-space: nowrap;
-                      overflow: hidden;
-                      text-overflow: ellipsis;
-                  }
-                  .btn {
-                      display: inline-flex;
-                      align-items: center;
-                      justify-content: center;
-                      width: 32px;
-                      height: 32px;
-                      border-radius: 10px;
-                      border: 1px solid #d0d7de;
-                      background: #ffffff;
-                      cursor: pointer;
-                      padding: 0;
-                  }
-                  .btn:hover { background: #f5f7fa; }
-                  .icon { width: 18px; height: 18px; display: block; }
-                  .body { padding: 14px; }
-                  .filterGroup { margin-bottom: 16px; }
-                  .filterGroup:last-child { margin-bottom: 0; }
-                  .filterLabel {
-                      display: block;
-                      font-size: 13px;
-                      font-weight: 600;
-                      margin-bottom: 8px;
-                      color: #0b0f14;
-                  }
-                  .checkboxWrapper {
-                      display: flex;
-                      align-items: center;
-                      gap: 8px;
-                      padding: 8px;
-                      border-radius: 8px;
-                      cursor: pointer;
-                      user-select: none;
-                  }
-                  .checkboxWrapper:hover { background: #f5f7fa; }
-                  .checkbox {
-                      width: 18px;
-                      height: 18px;
-                      border: 2px solid #d0d7de;
-                      border-radius: 4px;
-                      cursor: pointer;
-                      flex-shrink: 0;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                  }
-                  .checkbox.checked {
-                      background: #2d5bff;
-                      border-color: #2d5bff;
-                  }
-                  .checkboxLabel {
-                      font-size: 14px;
-                      color: #0b0f14;
-                      cursor: pointer;
-                  }
-                  .timeInput {
-                      height: 40px;
-                      padding: 0 12px;
-                      border: 1px solid #d0d7de;
-                      border-radius: 8px;
-                      font-size: 14px;
-                      font-family: inherit;
-                      color: #0b0f14;
-                  }
-                  .timeInput:focus {
-                      outline: none;
-                      border-color: #2d5bff;
-                  }
-                  .stats {
-                      margin-top: 16px;
-                      padding-top: 16px;
-                      border-top: 1px solid #eef1f4;
-                      font-size: 12px;
-                      color: #667085;
-                      text-align: center;
-                  }
-              `;
+                    @keyframes panelIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+                    :host { all: initial; }
+                    .panel {
+                        position: fixed;
+                        top: 173.5px;
+                        right: 24px;
+                        width: 320px;
+                        background: #ffffff;
+                        color: #0b0f14;
+                        border: 1px solid #e6e8eb;
+                        border-radius: 16px;
+                        box-shadow: 0 16px 48px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.12);
+                        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+                        overflow: hidden;
+                        z-index: 2147483647;
+                        animation: panelIn 160ms ease-out both;
+                    }
+                    .header {
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        padding: 12px 14px;
+                        border-bottom: 1px solid #eef1f4;
+                        background: #fbfcfd;
+                    }
+                    .titleWrap { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
+                    .badge {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 28px;
+                        height: 28px;
+                        border-radius: 8px;
+                        background: #eef3ff;
+                        color: #2d5bff;
+                        font-weight: 600;
+                        font-size: 14px;
+                        flex: 0 0 auto;
+                    }
+                    .title {
+                        font-size: 16px;
+                        font-weight: 700;
+                        margin: 0;
+                        line-height: 1.2;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    .btn {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 10px;
+                        border: 1px solid #d0d7de;
+                        background: #ffffff;
+                        cursor: pointer;
+                        padding: 0;
+                    }
+                    .btn:hover { background: #f5f7fa; }
+                    .icon { width: 18px; height: 18px; display: block; }
+                    .body { padding: 14px; }
+                    .filterGroup { margin-bottom: 16px; }
+                    .filterGroup:last-child { margin-bottom: 0; }
+                    .filterLabel {
+                        display: block;
+                        font-size: 13px;
+                        font-weight: 600;
+                        margin-bottom: 8px;
+                        color: #0b0f14;
+                    }
+                    .checkboxWrapper {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        padding: 8px;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        user-select: none;
+                    }
+                    .checkboxWrapper:hover { background: #f5f7fa; }
+                    .checkbox {
+                        width: 18px;
+                        height: 18px;
+                        border: 2px solid #d0d7de;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        flex-shrink: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .checkbox.checked {
+                        background: #2d5bff;
+                        border-color: #2d5bff;
+                    }
+                    .checkboxLabel {
+                        font-size: 14px;
+                        color: #0b0f14;
+                        cursor: pointer;
+                    }
+                    .timeInput {
+                        height: 40px;
+                        padding: 0 12px;
+                        border: 1px solid #d0d7de;
+                        border-radius: 8px;
+                        font-size: 14px;
+                        font-family: inherit;
+                        color: #0b0f14;
+                    }
+                    .timeInput:focus {
+                        outline: none;
+                        border-color: #2d5bff;
+                    }
+                    .stats {
+                        margin-top: 16px;
+                        padding-top: 16px;
+                        border-top: 1px solid #eef1f4;
+                        font-size: 12px;
+                        color: #667085;
+                        text-align: center;
+                    }
+                `;
 
       const html = `
-                  <style>${css}</style>
-                  <div class="panel" role="dialog" aria-label="Film Filters">
-                      <div class="header">
-                          <div class="titleWrap">
-                              <div class="badge">🎬</div>
-                              <h3 class="title">Film Filters</h3>
-                          </div>
-                          <button class="btn js-close" aria-label="Close">${this.icons.close}</button>
-                      </div>
-                      <div class="body">
-                          <div class="filterGroup">
-                              <label class="filterLabel">Show Films</label>
-                              <div class="checkboxWrapper js-toggle-today">
-                                  <div class="checkbox js-checkbox-today">
-                                      ${this.icons.check}
-                                  </div>
-                                  <span class="checkboxLabel">Today only</span>
-                              </div>
-                          </div>
-                          <div class="filterGroup">
-                              <label class="filterLabel" for="minTime">Minimum Time</label>
-                              <input type="time" id="minTime" class="timeInput js-time-input" placeholder="e.g., 18:00">
-                              <div class="checkboxWrapper js-toggle-hide-early" style="margin-top: 8px;">
-                                  <div class="checkbox js-checkbox-hide-early">
-                                      ${this.icons.check}
-                                  </div>
-                                  <span class="checkboxLabel">Hide times before minimum</span>
-                              </div>
-                          </div>
-                          <div class="stats">
-                              <span class="js-stats">Showing all films</span>
-                          </div>
-                      </div>
-                  </div>
-              `;
+                    <style>${css}</style>
+                    <div class="panel" role="dialog" aria-label="Film Filters">
+                        <div class="header">
+                            <div class="titleWrap">
+                                <div class="badge">🎬</div>
+                                <h3 class="title">Film Filters</h3>
+                            </div>
+                            <button class="btn js-close" aria-label="Close">${this.icons.close}</button>
+                        </div>
+                        <div class="body">
+                            <div class="filterGroup">
+                                <label class="filterLabel">Show Films</label>
+                                <div class="checkboxWrapper js-toggle-today">
+                                    <div class="checkbox js-checkbox-today">
+                                        ${this.icons.check}
+                                    </div>
+                                    <span class="checkboxLabel">Today only</span>
+                                </div>
+                            </div>
+                            <div class="filterGroup">
+                                <label class="filterLabel" for="minTime">Minimum Time</label>
+                                <input type="time" id="minTime" class="timeInput js-time-input" placeholder="e.g., 18:00">
+                                <div class="checkboxWrapper js-toggle-hide-early" style="margin-top: 8px;">
+                                    <div class="checkbox js-checkbox-hide-early">
+                                        ${this.icons.check}
+                                    </div>
+                                    <span class="checkboxLabel">Hide times before minimum</span>
+                                </div>
+                            </div>
+                            <div class="stats">
+                                <span class="js-stats">Showing all films</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
 
       this.shadow.innerHTML = html;
     }
@@ -265,8 +260,8 @@
       const style = document.createElement('style');
       style.id = 'cineworld-filter-global-styles';
       style.textContent = `
-          .qb-last-type-row { border-bottom: 1px solid transparent !important; margin-bottom: 0 !important; }
-        `;
+            .qb-last-type-row { border-bottom: 1px solid transparent !important; margin-bottom: 0 !important; }
+          `;
       document.head.appendChild(style);
     }
 
@@ -528,18 +523,18 @@
      */
     getIcons() {
       const close = `
-                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                      <g fill="none">
-                          <path d="M19 5L5 19M5 5L19 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                      </g>
-                  </svg>
-              `;
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                        <g fill="none">
+                            <path d="M19 5L5 19M5 5L19 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                    </svg>
+                `;
 
       const check = `
-                  <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 12.8333L9.375 17L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-              `;
+                    <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12.8333L9.375 17L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                `;
 
       return { close, check };
     }
